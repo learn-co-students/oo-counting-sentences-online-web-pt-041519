@@ -19,10 +19,6 @@ class String
   # Return count of how many sentences exist in the string.
   def count_sentences
     # Split sentences into array components and remove empty components
-    sentences = self.split(/[.?!]/)
-    sentences.keep_if {|sentence| sentence.length > 0}
-
-    # Return sentence count
-    sentences.length
+    self.split(/[.?!]/).keep_if {|sentence| sentence.length > 1}.length
   end
 end
